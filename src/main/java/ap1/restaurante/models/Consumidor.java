@@ -2,6 +2,7 @@ package ap1.restaurante.models;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -29,7 +30,7 @@ public class Consumidor implements Serializable {
 
 	@OneToMany
 	@JoinColumn(name = "codigo_refeicao")
-	private List<Refeicao> refeicao;
+	private List<Refeicao> refeicao = new ArrayList<>();
 
 	public Consumidor() {
 	}

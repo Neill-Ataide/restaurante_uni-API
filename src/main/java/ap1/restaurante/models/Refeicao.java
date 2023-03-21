@@ -2,7 +2,6 @@ package ap1.restaurante.models;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Objects;
 
 import ap1.restaurante.models.enums.TipoRefeicao;
@@ -28,12 +27,12 @@ public class Refeicao implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "codigo_consumidor")
-	private List<Consumidor> consumidor;
+	private Consumidor consumidor;
 
 	public Refeicao() {
-	}
+	}	
 
-	public Refeicao(Long codigo, LocalDateTime dataConsumo, TipoRefeicao tipo, List<Consumidor> consumidor) {
+	public Refeicao(Long codigo, LocalDateTime dataConsumo, TipoRefeicao tipo, Consumidor consumidor) {
 		super();
 		this.codigo = codigo;
 		this.dataConsumo = dataConsumo;
@@ -45,33 +44,49 @@ public class Refeicao implements Serializable {
 		return codigo;
 	}
 
+
+
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
+
+
 
 	public LocalDateTime getDataConsumo() {
 		return dataConsumo;
 	}
 
+
+
 	public void setDataConsumo(LocalDateTime dataConsumo) {
 		this.dataConsumo = dataConsumo;
 	}
+
+
 
 	public TipoRefeicao getTipo() {
 		return tipo;
 	}
 
+
+
 	public void setTipo(TipoRefeicao tipo) {
 		this.tipo = tipo;
 	}
 
-	public List<Consumidor> getConsumidor() {
+
+
+	public Consumidor getConsumidor() {
 		return consumidor;
 	}
 
-	public void setConsumidor(List<Consumidor> consumidor) {
+
+
+	public void setConsumidor(Consumidor consumidor) {
 		this.consumidor = consumidor;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
